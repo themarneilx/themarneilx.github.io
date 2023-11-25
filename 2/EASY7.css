@@ -1,0 +1,55 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.grid-container {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  /* border: 10px solid white; */
+}
+
+.blue {
+  background-color: blue;
+
+  padding: 20px 5px 10px;
+}
+.grey {
+  background-color: grey;
+
+  padding: 20px 5px 10px;
+}
+.green {
+  background-color: green;
+
+  padding: 25px 5px 15px;
+}
+.yellow {
+  background-color: yellow;
+
+  padding: 20px 5px 15px;
+}
+.black {
+  background-color: black;
+
+  padding: 20px 5px 15px;
+}
+.red {
+  background-color: red;
+
+  padding: 20px 5px 15px;
+}
+.cyan {
+  background-color: cyan;
+
+  padding: 21.3px 5px 20px;
+}
+
+
+body {
+    height: 100vh;
+}

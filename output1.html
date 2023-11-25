@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="semantic.css">
+    
+    <title>Marneilx</title>
+
+    <script>
+    
+        function loadHTML(id, filename) {
+        let xhttp;
+        let element = document.getElementById(id);
+        let file = filename;
+    
+        if ( file ) {
+    
+            xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function() {
+                if (this.readyState == 4) {
+                    if (this.status == 200) {element.innerHTML = this.responseText;}
+                    if (this.status == 404) {element.innerHTML = "<h1>Page not found.</h1>";}
+                }
+            }
+            xhttp.open("GET", `1/${file}`, true);
+            xhttp.send();
+            return;
+        }
+    
+    }</script>
+</head>
+
+<body>
+    
+    <header>
+        <h1>My Portfolio</h1>
+        <h2>Jon Marneil Cabahug</h2>
+
+        <nav>
+
+            <ul>
+                <a class = "btn" href="index.html">About</a>
+                <a class = "btn" href="favprog.html">Favorite Programs</a>
+                <a class = "btn" href="contact.html">Contact</a>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">HTML & CSS</a>
+                    <div class="dropdown-content">
+                        <a class = "active" href="output1.html">Output 1</a>
+                        <a href="output2.html">Output 2</a>
+                      </div>
+                </li>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">JavaScript</a>
+                    <div class="dropdown-content">
+                        <a href="calc.html">Simple JS Calculator</a>
+                        <a href="javascript.html">JavaScript Examples</a>
+                        <a href="jscalc.html">JS Calculator</a>
+                        <a href="javascript2.html">JavaScript Examples 2</a>
+                        <a href="converter.html">Unit Converter</a>
+                      </div>
+                </li>
+                
+                
+            </ul>
+
+        </nav>
+
+
+    </header>
+<h1>HTML</h1>
+    <div style="margin-top: 1%;">
+        <a class = "btn" href="#" onclick="loadHTML('template','A.html')">A</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','B.html')">B</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','C.html')">C</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','E.html')">E</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','F.html')">F</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','G.html')">G</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','H.html')">H</a>
+        <a class = "btn" href="#" onclick="loadHTML('template','I.html')">I</a>
+    </div>
+    <div style="margin-top: 1%;" id="template">
+        
+    </div>
+
+
+
+</body>
+</html>

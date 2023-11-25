@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="semantic.css">
+    
+    <title>Marneilx</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1>My Portfolio</h1>
+        <h2>Jon Marneil Cabahug</h2>
+
+        <nav>
+
+            <ul>
+                <a class = "btn" href="index.html">About</a>
+                <a class = "btn" href="favprog.html">Favorite Programs</a>
+                <a class = "btn" href="contact.html">Contact</a>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">HTML & CSS</a>
+                    <div class="dropdown-content">
+                        <a href="output1.html">Output 1</a>
+                        <a href="output2.html">Output 2</a>
+                      </div>
+                </li>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">JavaScript</a>
+                    <div class="dropdown-content">
+                        <a href="calc.html">Simple JS Calculator</a>
+                        <a class = "active" href="javascript.html">JavaScript Examples</a>
+                        <a href="jscalc.html">JS Calculator</a>
+                        <a href="javascript2.html">JavaScript Examples 2</a>
+                        <a href="converter.html">Unit Converter</a>
+                      </div>
+                </li>
+                
+                
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <main>
+        
+        <h1 style = "text-align: center;">JS Examples</h1>
+        
+        <section class = "div1">
+            <h1>Dynamic Content</h1>
+            <p id = "change">Marneilx</p>
+            <button onclick="changeText()">Click to Reveal</button>
+        </section>
+
+        <section class = "div1">
+            <h1>Form Validation</h1>
+
+            <form onsubmit="return validateForm()">
+
+            <input type="text" id="email" placeholder = "Email" style="margin-top: 5%;">
+            <input type="password" id="password" placeholder = "Password" style="margin-top: 5%;">
+            <button type="submit" style="width: 100%;margin-top: 5%;">Submit</button>
+
+            </form>
+
+        </section>
+
+        <section class = "div1">
+            <h1>Dynamic Styling</h1>
+            <div style="margin-top: 5%;">
+
+                <button id="colorbutton" onclick="changeColor()">Change Color</button>
+
+            </div>
+            
+
+        </section>
+
+        <section class = "div1">
+            <h1>Animation</h1>
+            <div class ="box" id="animate" style="margin-top: 5%; margin-bottom: 5%;"></div>
+            <button onclick="animateBox()">Animate</button>  
+
+        </section>
+
+        <section class = "div1">
+            <h1>Media Queries and JavaScript</h1>
+            <div style="margin-top: 5%; margin-bottom: 5%;"></div>
+            
+            <p>Text with responsive font size</p>
+
+        </section>
+
+        <section class = "div1">
+            <h1>Handling User Input</h1>
+            <div style="margin-top: 5%; margin-bottom: 5%;"></div>
+            <h4 id="counter">Click Count: 0</h4>
+            <button onclick="incrementCounter()">Click me</button>
+
+        </section>
+
+        <section class = "div1">
+            <h1>Data Fetching</h1>
+            <div id="data" style="margin-top: 5%; margin-bottom: 5%;"></div>
+            <div id="data2" style="margin-top: 5%; margin-bottom: 5%;"></div>
+            <div id="data3" style="margin-top: 5%; margin-bottom: 5%;"></div>
+            <div id="data4" style="margin-top: 5%; margin-bottom: 5%;"></div>
+
+
+        </section>
+        
+    </main>
+
+    
+
+    
+    <footer>
+       <p>Copyright &copy; 2023 Marneilx. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+<script>
+    function changeText(){
+        document.getElementById("change").innerHTML = "Gwapo!";
+    }
+
+    function validateForm(){
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+
+        if (email === "" || password === "") {
+            alert("Please fill in all fields.");
+            return false;
+        }
+
+    }
+
+    function changeColor(){
+        const button = document.querySelector("#colorbutton");
+        button.style.backgroundColor = "red";
+        button.style.color = "white";
+    }
+
+    function animateBox(){
+        const box = document.getElementById("animate");
+        box.style.width = "315px";
+    }
+
+    window.addEventListener("resize", adjustFontSize);
+
+    function adjustFontSize() {
+        const fontSize = window.innerWidth < 600 ? "14px" : "16px";
+        document.body.style.fontsize = fontSize
+
+    }
+
+    let count = 0;
+    const counter = document.getElementById("counter");
+
+    function incrementCounter() {
+        count++;
+        counter.textContent = "Click Count: " + count;
+    }
+
+    const data1Div = document.getElementById("data");
+    const data2Div = document.getElementById("data2");
+    const data3Div = document.getElementById("data3");
+    const data4Div = document.getElementById("data4");
+
+        fetch("https://jsonplaceholder.typicode.com/todos/1")
+        .then((response) => response.json())
+        .then((data) => {
+            data1Div.textContent = "UserId: " + data.userId;
+            data2Div.textContent = "Id: " + data.id;
+            data3Div.textContent = "Title: " + data.title;
+            data4Div.textContent = "Completed: " + data.completed;
+        })
+
+</script>
+
+
+</html>

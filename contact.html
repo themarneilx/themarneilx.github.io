@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="semantic.css">
+    
+    <title>Marneilx</title>
+</head>
+<body>
+    
+    <header>
+        <h1>My Portfolio</h1>
+        <h2>Jon Marneil Cabahug</h2>
+
+        <nav>
+
+            <ul>
+                <a class = "btn" href="index.html">About</a>
+                <a class = "btn" href="favprog.html">Favorite Programs</a>
+                <a class = "active" href="contact.html">Contact</a>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">HTML & CSS</a>
+                    <div class="dropdown-content">
+                        <a href="output1.html">Output 1</a>
+                        <a href="output2.html">Output 2</a>
+                      </div>
+                </li>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">JavaScript</a>
+                    <div class="dropdown-content">
+                        <a href="calc.html">Simple JS Calculator</a>
+                        <a href="javascript.html">JavaScript Examples</a>
+                        <a href="jscalc.html">JS Calculator</a>
+                        <a href="javascript2.html">JavaScript Examples 2</a>
+                        <a href="converter.html">Unit Converter</a>
+                      </div>
+                </li>
+                
+                
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <main>
+
+        <section class = "div1"><h1>Contact Me</h1>
+                
+            <p>Contact me at
+            <a href = "mailto: joncabs100@gmail.com">joncabs100@gmail.com</a>
+            </p>
+
+        </section>
+
+    </main>
+
+
+    
+    <footer>
+        <p>Copyright &copy; 2023 Marneilx. All rights reserved.</p>
+    </footer>
+
+<script>
+        window.addEventListener("resize", adjustFontSize);
+    
+        function adjustFontSize() {
+        const fontSize = window.innerWidth < 600 ? "14px" : "16px";
+        document.body.style.fontsize = fontSize
+    
+    }
+    
+</script>
+    
+</body>
+</html>

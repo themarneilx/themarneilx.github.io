@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  height: 100vh;
+}
+.grid-box {
+
+
+  padding: 105px 10px;
+}
+
+.grid-rectangle {
+ 
+
+  padding: 90px;
+}
+
+
+body {
+    height: 100vh;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.red {
+    background-color: red;
+}

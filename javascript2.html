@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="semantic.css">
+    
+    <style>
+        .class1 {
+          max-height:0px;
+          transition:max-height 1s;
+          overflow:hidden;
+        }
+
+        #myText{
+            color: black;
+        }
+
+        @keyframes customAnimation {
+            0% {
+                transform: scaleX(-1);
+            }
+            50% {
+                transform: scaleX(1.5);
+            }
+            100% {
+                transform: scaleX(1);
+            }
+        }
+
+        .slide-in {
+            animation: slideIn 1s;
+        }
+
+        #animdiv {
+            width: 100px;
+            height: 50px;
+            background-color: lightblue;
+            text-align: center;
+            line-height: 50px;
+        }
+      </style>
+
+    <title>Marneilx</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1>My Portfolio</h1>
+        <h2>Jon Marneil Cabahug</h2>
+
+        <nav>
+
+            <ul>
+                <a class = "btn" href="index.html">About</a>
+                <a class = "btn" href="favprog.html">Favorite Programs</a>
+                <a class = "btn" href="contact.html">Contact</a>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">HTML & CSS</a>
+                    <div class="dropdown-content">
+                        <a href="output1.html">Output 1</a>
+                        <a href="output2.html">Output 2</a>
+                      </div>
+                </li>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">JavaScript</a>
+                    <div class="dropdown-content">
+                        <a href="calc.html">Simple JS Calculator</a>
+                        <a href="javascript.html">JavaScript Examples</a>
+                        <a href="jscalc.html">JS Calculator</a>
+                        <a class = "active" href="javascript2.html">JavaScript Examples 2</a>
+                        <a href="converter.html">Unit Converter</a>
+                      </div>
+                </li>
+                
+                
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <main>
+        
+        <h1 style = "text-align: center;">JS Examples 2</h1>
+        
+        <section class = "div1">
+            <h1>Events Example</h1>
+            <h5>Click Event:</h5>
+            <button id="Events">Click Me</button>
+            <h5>Mouseover and Mouseout Events:</h5>
+            <button id="MEvent">Mouseover and Mouseout</button>
+            <h5>Keydown and Keyup Events:</h5>
+            <p>press the Enter key</p>
+            <h5>Submit Event:</h5>
+            <form id = "Eform">
+                <input type="text" name="username">
+                <button type="submit">Submit</button>
+            </form>
+
+            <h5>Change Event:</h5>
+            <form id = "Eform">
+                <input type="checkbox" id="Echeck"> check me
+            </form>
+
+            <h5>Load Event:</h5>
+                <button onclick="show()" id="Eimage">Show Image</button>
+                <div  id="id1" class="class1">
+                    <img src="rickroll-roll.gif" id="" alt="rick">
+                  </div>
+                
+            <h5>Focus and Blur Events:</h5>
+                <input type="text" id="Einput">
+
+            <h5>Contextmenu Event:</h5>
+            <p>right click on the input box below.</p>
+                <input type="text" id="Eelement">
+
+            <h5>Contextmenu Event:</h5>
+            <p>touch on the input box below.</p>
+                <input type="text" id="Telement">
+
+            <h5>Scroll Event:</h5>
+            
+            <div id="scrollablediv" style="width: 20%;height: 5%;">
+                <p>scroll me hahahahahahahahahahaa</p>
+            </div>
+
+            <h5>Drag and Drop Events (Dragstart, Dragover, Drop):</h5>
+            
+            <div id="dragElement" draggable="true">Drag me!</div>
+            <div id="dropTarget">Drop me here!</div>
+
+            <h5>Event Object:</h5>
+            <button id="obj">Click Me</button>
+            
+            <h5>Toggling a CSS Class:</h5>
+            <button type="button" id="toggle">Click Me</button>
+
+            <h5>Modifying Text Styles:</h5>  
+            <p id="toggletext">Lol</p>
+
+            <h5>Creating Custom CSS Animations:</h5>  
+            <div id="animdiv">Animate me!</div>
+            <button type="button" id="animbutton">Click Me</button>
+            
+        </section>
+
+
+        
+        
+    </main>
+
+    
+
+    
+    <footer>
+       <p>Copyright &copy; 2023 Marneilx. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+<script>
+    const button = document.getElementById("Events");
+    button.addEventListener("click", function (){
+        alert("Button Clicked!");
+    });
+
+    const element = document.getElementById("MEvent");
+    element.addEventListener("mouseover", function (){
+        element.style.backgroundColor = "pink";
+    });
+    element.addEventListener("mouseout", function (){
+        element.style.backgroundColor = "#f0f0f0";
+    });
+
+    document.addEventListener("keydown", function (event) {
+        if (event.key == "Enter"){
+            alert("Enter key pressed!");
+        }
+    });
+
+    const form = document.getElementById("Eform");
+    form.addEventListener("submit", function (event) {
+        event.preventDefault();
+        alert("Form Submitted!");
+    });
+
+    const checkbox = document.getElementById("Echeck");
+    checkbox.addEventListener("change", function () {
+        alert("Checkbox state changed!");
+    });
+
+    const image = document.getElementById("Eimage");
+    image.addEventListener("load", function () {
+        alert("Image Loaded!");
+    });
+
+    function show() {
+      document.getElementById('id1').style.maxHeight = "300px";
+      document.getElementById('id1').style.maxWidth = "350px";
+      alert("You Have Been Ricked Rolled!");
+    }
+
+    window.addEventListener("resize", function () {
+        alert("Window resized!");
+    });
+  
+    const inputE = document.getElementById("Einput");
+    inputE.addEventListener("focus", function () {
+        inputE.style.backgroundColor = "pink";
+    });
+    inputE.addEventListener("blur", function () {
+        inputE.style.backgroundColor = "white";
+    });
+
+    const element1 = document.getElementById("Eelement");
+    element1.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+        alert("context menu opened!");
+    });
+
+    const touchelement = document.getElementById("Telement");
+    touchelement.addEventListener("touchstart", function (event) {
+        alert("Touch started!");
+    });
+    
+    const scrollableDiv = document.getElementById("scrollablediv");
+    scrollableDiv.addEventListener("scroll", function () {
+        alert("Scrolled!");
+    });
+    scrollableDiv.style.height = '200px';
+    scrollableDiv.style.overflow = 'auto';
+
+    const dragElement = document.getElementById("dragElement");
+    const dropTarget = document.getElementById("dropTarget");
+
+    dragElement.addEventListener("dragstart", function (event) {
+        event.dataTransfer.setData("text/plain", "Dragged Item");
+    });
+
+    dropTarget.addEventListener("dragover", function (event) {
+        event.preventDefault();
+    });
+
+    dropTarget.addEventListener("drop", function (event) {
+        const data = event.dataTransfer.getData("text/plain");
+        alert(`Dropped: ${data}`);
+    });
+
+    const button2 = document.getElementById("obj");
+    button2.addEventListener("click", function (event) {
+        alert(`Target: ${event.target.id}, Type: ${event.type}`);
+    });
+
+    const elementtoggle = document.getElementById("toggle");
+    elementtoggle.addEventListener("click", function () {
+        elementtoggle.classList.toggle("active");
+    });
+
+    const textElement = document.getElementById("toggletext");
+    textElement.addEventListener("mouseenter", function () {
+        textElement.style.color = "pink";
+    });
+    textElement.addEventListener("mouseleave", function () {
+        textElement.style.color = "black";
+    });
+
+    const elementanim = document.getElementById("animbutton");
+    const animatedDiv = document.getElementById("animdiv");
+    elementanim.addEventListener("click", function () {
+        animatedDiv.style.animation = 'customAnimation 2s ease-in-out';
+    });
+
+</script>
+
+
+</html>

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="semantic.css">
+    <title>Marneilx</title>
+</head>
+
+<body>
+    
+    <header>
+        <h1>My Portfolio</h1>
+        <h2>Jon Marneil Cabahug</h2>
+
+        <nav>
+
+            <ul>
+                <a class = "btn" href="index.html">About</a>
+                <a class = "btn" href="favprog.html">Favorite Programs</a>
+                <a class = "btn" href="contact.html">Contact</a>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">HTML & CSS</a>
+                    <div class="dropdown-content">
+                        <a href="output1.html">Output 1</a>
+                        <a href="output2.html">Output 2</a>
+                      </div>
+                </li>
+
+                <li class = dropdown>
+                    <a class = "dropbtn" href="javascript:void(0)">JavaScript</a>
+                    <div class="dropdown-content">
+                        <a class = "active" href="calc.html">Simple JS Calculator</a>
+                        <a href="javascript.html">JavaScript Examples</a>
+                        <a href="jscalc.html">JS Calculator</a>
+                        <a href="javascript2.html">JavaScript Examples 2</a>
+                        <a href="converter.html">Unit Converter</a>
+                      </div>
+                </li>
+                
+                
+            </ul>
+
+        </nav>
+
+
+    </header>
+
+    <main>
+        
+        
+        
+        <section class = "div1">
+            <h1>Simple Calculator</h1>
+            <h4>Enter first number:</h4>
+            <input type="number" id="FirstNum" />
+            
+            <h4>Enter second number</h4>
+            <input type="number" id="SecondNum" style="margin-right: 45%; margin-bottom: 5%;"/>
+            <button type="button" onclick="Add()">Add</button>
+            <button type="button" onclick="Subtract()">Subtract</button>
+            <button type="button" onclick="Multiply()">Multiply</button>
+            <button type="button" onclick="Divide()">Divide</button>
+            <h2 id ="result" style="margin-top: 5%;"></h2>
+           
+        </section>
+
+
+
+    </main>
+
+    
+
+    
+    <footer>
+       <p>Copyright &copy; 2023 Marneilx. All rights reserved.</p>
+    </footer>
+    
+</body>
+
+<script>
+    function Add(){
+        var inputone = parseInt(document.getElementById("FirstNum").value);
+        var inputtwo = parseInt(document.getElementById("SecondNum").value);
+        var result = inputone + inputtwo;
+
+        document.getElementById("result").innerHTML = "Result: "+ result;
+    }
+
+    function Subtract(){
+        var inputone = parseInt(document.getElementById("FirstNum").value);
+        var inputtwo = parseInt(document.getElementById("SecondNum").value);
+        var result = inputone - inputtwo;
+
+        document.getElementById("result").innerHTML = "Result: "+ result;
+    }
+
+    function Multiply(){
+        var inputone = parseInt(document.getElementById("FirstNum").value);
+        var inputtwo = parseInt(document.getElementById("SecondNum").value);
+        var result = inputone * inputtwo;
+
+        document.getElementById("result").innerHTML = "Result: "+ result;
+    }
+
+    function Divide(){
+        var inputone = parseInt(document.getElementById("FirstNum").value);
+        var inputtwo = parseInt(document.getElementById("SecondNum").value);
+        var result = inputone / inputtwo;
+
+        document.getElementById("result").innerHTML = "Result: "+ result;
+    }
+
+    window.addEventListener("resize", adjustFontSize);
+
+    function adjustFontSize() {
+        const fontSize = window.innerWidth < 600 ? "14px" : "16px";
+        document.body.style.fontsize = fontSize
+    }
+</script>
+
+
+</html>

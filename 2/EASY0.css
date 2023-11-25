@@ -1,0 +1,53 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+}
+.grid-container2 {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto auto auto auto auto auto auto;
+}
+
+.grid-box {
+  padding: 90px 50px 50px;
+}
+.grid-box2 {
+  padding: 100px 50px 80px;
+}
+.grid-box3 {
+  padding: 130px 50px 130px;
+}
+
+body {
+  height: 100vh;
+}
+
+.blue {
+  background-color: rgb(10, 10, 10);
+}
+
+.grey {
+  background-color: rgb(204, 43, 43);
+}
+
+.red {
+  background-color: rgb(30, 7, 236);
+}
+
+.black {
+  background-color: rgb(9, 218, 27);
+}
+
+.cyan {
+  background-color: cyan;
+}
+
+.green {
+  background-color: rgb(223, 248, 0);
+}
