@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Moved</title>
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Fallback meta refresh (slightly longer to allow JS to handle it smoothly) -->
+    <meta http-equiv="refresh" content="6;url=https://www.marneilx.org">
+    <style>
+        /* Custom animation for the background */
+        @keyframes blob {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-blob {
+            animation: blob 7s infinite;
+        }
+        .animation-delay-2000 {
+            animation-delay: 2s;
+        }
+        .animation-delay-4000 {
+            animation-delay: 4s;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 min-h-screen flex items-center justify-center p-4 font-sans text-slate-100 overflow-hidden relative">
+
+    <!-- Decorative Background Elements -->
+    <div class="absolute top-0 -left-4 w-72 h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob"></div>
+    <div class="absolute top-0 -right-4 w-72 h-72 bg-yellow-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000"></div>
+    <div class="absolute -bottom-8 left-20 w-72 h-72 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000"></div>
+
+    <div class="max-w-md w-full bg-slate-800/50 backdrop-blur-lg border border-slate-700 rounded-2xl shadow-2xl p-8 text-center relative z-10">
+        <div class="mb-6 flex justify-center">
+            <div class="p-4 bg-blue-500/10 rounded-full">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-12 w-12 text-blue-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M13 9l3 3m0 0l-3 3m3-3H8m13 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+            </div>
+        </div>
+        
+        <h1 class="text-3xl font-bold mb-2 text-white">We've Moved!</h1>
+        
+        <p class="text-slate-400 mb-8 text-lg leading-relaxed">
+            This portfolio has found a new home. Please update your bookmarks.
+        </p>
+
+        <a href="https://www.marneilx.org" class="group relative inline-flex items-center justify-center px-8 py-3 text-lg font-medium text-white transition-all duration-200 bg-blue-600 rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 focus:ring-offset-slate-800 w-full">
+            <span class="absolute inset-0 w-full h-full -mt-1 rounded-lg opacity-30 bg-gradient-to-b from-transparent via-transparent to-black"></span>
+            <span class="relative flex items-center gap-2">
+                Go to marneilx.org
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-200 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
+            </span>
+        </a>
+
+        <p class="mt-6 text-sm text-slate-500">
+            Redirecting automatically in <span id="countdown" class="font-bold text-slate-300">5</span> seconds...
+        </p>
+    </div>
+
+    <script>
+        // Countdown logic
+        let seconds = 5;
+        const countdownElement = document.getElementById('countdown');
+        
+        const interval = setInterval(() => {
+            seconds--;
+            if (seconds >= 0) {
+                countdownElement.textContent = seconds;
+            }
+            if (seconds <= 0) {
+                clearInterval(interval);
+                window.location.href = "https://www.marneilx.org";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
